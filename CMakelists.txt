@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.13)  # CMake version check
+project(TDDSCF VERSION 0.01) 
+set(CMAKE_CXX_STANDARD 14)            # Enable c++14 standard
+
+# Product
+add_executable(main main.cpp)
+
+# Add Source files
+add_subdirectory(TDDSCF PUBLIC
+"${PROJECT_BINARY_DIR}/src")
+target_include_directories(TDDSCF PUBLIC
+"${PROJECT_BINARY_DIR}/include")
+
+# Tell C++ compiler to use C++20 features. We don't actually use any of them.
+target_compile_features(main PUBLIC cxx_std_20)
