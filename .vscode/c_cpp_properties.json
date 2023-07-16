@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/src/**",
+                "/usr/local/include/libint2/**",
+                "/usr/include/eigen3/**",
+                "/usr/include/hdf5/serial/**",
+                "${workspaceFolder}/../external/HighFive/highfive-v2.7.1/**",
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}

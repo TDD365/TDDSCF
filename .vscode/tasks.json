@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++ build active file",
+			"command": "/usr/bin/g++",
+			"args": [
+				"-g",
+				"${workspaceFolder}/main.cpp",
+				"${workspaceFolder}/src/*.cpp",
+				"${workspaceFolder}/include/*.hpp",
+                "-I${workspaceFolder}/include/",
+                "-I/usr/local/include/libint2/",
+                "-I/usr/include/eigen3/",
+                "-I/usr/include/hdf5/serial/",
+                "-I${workspaceFolder}/../external/HighFive/highfive-v2.7.1/include/",
+				"-o",
+				"${workspaceFolder}/bin/outputfile",
+				"-L.",
+				"libint2.a"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: /usr/bin/g++"
+		},
+	]
+}
