@@ -17,8 +17,8 @@
                 "-I${workspaceFolder}/../external/HighFive/highfive-v2.7.1/include/",
 				"-o",
 				"${workspaceFolder}/bin/outputfile",
-				"-L.",
-				"libint2.a"
+				"-L$/usr/local/lib/",
+				"-lint2"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}"
