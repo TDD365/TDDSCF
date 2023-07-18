@@ -1,3 +1,4 @@
 .libint.a
 bin
 ./bin/*
+OUT

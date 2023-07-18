@@ -191,10 +191,12 @@ void Eint::compute_h1e_nuc() {
 }
 
 // ERI
-// In human words, Electronic repulsion integral
+// In human words, Electronic Repulsion Integral
 void Eint::compute_eri() {
 
-    MatrixRowMajor Result(NBF*NBF, NBF*NBF);
+    // Open memory
+    Mol_pointer->ERI = TensorRowMajor(NBF,NBF,NBF,NBF);
+
     libint2::Engine h2e_engine(libint2::Operator::coulomb,
                                BSs.max_nprim(),
                                BSs.max_l()
@@ -202,24 +204,72 @@ void Eint::compute_eri() {
     const auto& buf = h2e_engine.results();
 
     // Do integral
-    // Here we will calculate (ij|kl)
+    // Here we will calculate (ab|cd)
     // (12|34) = (21|34) = (12|43) = (21|43) = (34|12) = (43|12) = (34|21) = (43|21)
     // Yes I know there are 4-fold symmetries, we will never encounter that in this code!
 
     // Go over all shells...
-    for(auto i=0; i<BSs.size(); i++) {
-        // No need to calculate (ji|kl)
-        for(auto j=0; j<i; j++) {
-            // No need to calculate (kl|ij)...
-            for(auto k=0; k<i; k++) {
-                // No need to calculate (kl|ji)...
-                for(auto l=0; l<k; l++) {
-                    //h2e_engine.compute(BSs[i], BSs[j], BSs[k], BSs[l]);
-                    //std::cout << h2e_engine<<endl;
+    for(auto s1=0; s1<BSs.size(); s1++) {
+        // No need to calculate (21|34)
+        for(auto s2=0; s2<=s1; s2++) {
+            // No need to calculate (34|12)...
+            for(auto s3=0; s3<=s1; s3++) {
+                // No need to calculate (12|43)...
+                auto s4_max = (s1 == s3) ? s2 : s3;
+                for(auto s4=0; s4<=s4_max; s4++) {
+                    // Compute!
+                    h2e_engine.compute(BSs[s1], BSs[s2], BSs[s3], BSs[s4]);
+
+                    // Check if screened out...
+                    const auto* buf_p = buf[0];
+                    if (buf_p == nullptr)
+                        continue;
+
+                    // Map it...
+                    Eigen::TensorMap<const TensorRowMajor> buffermat(buf[0], 
+                                                           BSs[s1].size(), 
+                                                           BSs[s2].size(),
+                                                           BSs[s3].size(),
+                                                           BSs[s4].size());
+                    // Block it...
+                    for(auto ai=0; ai<BSs[s1].size(); ai++) {
+                        for(auto bj=0; bj<BSs[s2].size(); bj++) {
+                            for(auto ck=0; ck<BSs[s3].size(); ck++) {
+                                for(auto dl=0; dl<BSs[s4].size(); dl++) {
+                                    auto i = BSs.shell2bf()[s1] + ai;
+                                    auto j = BSs.shell2bf()[s2] + bj;
+                                    auto k = BSs.shell2bf()[s3] + ck;
+                                    auto l = BSs.shell2bf()[s4] + dl;
+                                    Mol_pointer->ERI(i,j,k,l) = 
+                                    Mol_pointer->ERI(j,i,k,l) = 
+                                    Mol_pointer->ERI(i,j,l,k) = 
+                                    Mol_pointer->ERI(j,i,l,k) = 
+                                    Mol_pointer->ERI(k,l,i,j) = 
+                                    Mol_pointer->ERI(k,l,j,i) = 
+                                    Mol_pointer->ERI(l,k,i,j) = 
+                                    Mol_pointer->ERI(l,k,j,i) = 
+                                        buffermat(ai, bj, ck, dl);
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
     }
+
+    std::cout << "=== ERI ===" << std::endl;
+    for(auto i=0; i<NBF; i++) {
+    for(auto j=0; j<NBF; j++) {
+    for(auto k=0; k<NBF; k++) {
+    for(auto l=0; l<NBF; l++) {
+	if (Mol_pointer->ERI(i,j,k,l)>1e-7)
+		std::cout << i << " " << j << " " << k << " " << l << " " << Mol_pointer->ERI(i,j,k,l) <<endl;
+	}
+	}
+	}
+    }
+    std::cout << "=========" << std::endl;
 
 }
 

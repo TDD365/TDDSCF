@@ -45,20 +45,20 @@ class Molecule{
         double enuc;  // Nuclear Repulsion Energy
 
         // Property - Quamtum Chemistry
-        int NBF = 0;            // Total size of Basis
-        MatrixRowMajor Ovlp;    // Overlap
-        MatrixRowMajor HVel;    // Core Hamiltonian - Velocity Part
-        MatrixRowMajor HNuc;    // Core Hamiltonian - Nuclear Part
-        MatrixRowMajor HCore;   // Core Hamiltonian
+        int NBF = 0;                  // Total size of Basis
+        MatrixRowMajor Ovlp;          // Overlap
+        MatrixRowMajor HVel;          // Core Hamiltonian - Velocity Part
+        MatrixRowMajor HNuc;          // Core Hamiltonian - Nuclear Part
+        MatrixRowMajor HCore;         // Core Hamiltonian
 
-        MatrixRowMajor ERI;     // ERI
+        TensorRowMajor ERI;           // ERI
         
-        MatrixRowMajor SHalf;   // S^{-1/2}
-        MatrixRowMajor coeff;   // MO Coefficient
-        MatrixRowMajor Den;     // Density Matrix
-        MatrixRowMajor Fock;    // Fock Matrix
-        MatrixRowMajor oDen;    // Orthogonal Density Matrix
-        MatrixRowMajor oFock;   // Orthogonal Fock Matrix
+        MatrixRowMajor SHalf;         // S^{-1/2}
+        MatrixRowMajor coeff;         // MO Coefficient
+        MatrixRowMajor Den;           // Density Matrix
+        MatrixRowMajor Fock;          // Fock Matrix
+        MatrixRowMajor oDen;          // Orthogonal Density Matrix
+        MatrixRowMajor oFock;         // Orthogonal Fock Matrix
 
         // Object Variables
         std::vector<Atoms> Structure;

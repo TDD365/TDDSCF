@@ -65,7 +65,9 @@
         "strstream": "cpp",
         "cfenv": "cpp",
         "list": "cpp",
-        "core": "cpp"
+        "core": "cpp",
+        "tensor": "cpp",
+        "unordered_set": "cpp"
     },
     "cmake.configureOnOpen": false
 }
