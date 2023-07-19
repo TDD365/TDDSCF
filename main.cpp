@@ -1,9 +1,13 @@
 #include "mol.hpp"
 #include "eint.hpp"
+#include "controls.hpp"
 using namespace std;
   
 int main()
 {
+    // Read Controls
+    readControls("Input");
+
     // Construct Molecule Object
     Molecule* QMole = new Molecule();
 

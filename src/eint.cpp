@@ -1,5 +1,6 @@
 #include "mol.hpp"
 #include "eint.hpp"
+#include "controls.hpp"
 #include "H5Cpp.h"
 
 // Read Basis & Int options
@@ -91,9 +92,11 @@ void Eint::compute_ovlp() {
         }
     }
     Mol_pointer->Ovlp = Result.replicate(1,1);
-    std::cout << "=== S ===" << std::endl;
-    std::cout << Mol_pointer->Ovlp <<endl;
-    std::cout << "=========" << std::endl;
+    if (prtlevel>1) {
+        std::cout << "=== S ===" << std::endl;
+        std::cout << Mol_pointer->Ovlp <<endl;
+        std::cout << "=========" << std::endl;
+    }
 
 }
 
@@ -133,9 +136,11 @@ void Eint::compute_h1e_kin() {
         }
     }
     Mol_pointer->HVel = Result.replicate(1,1);
-    std::cout << "=== T ===" << std::endl;
-    std::cout << Mol_pointer->HVel <<endl;
-    std::cout << "=========" << std::endl;
+    if (prtlevel>1) {
+        std::cout << "=== T ===" << std::endl;
+        std::cout << Mol_pointer->HVel <<endl;
+        std::cout << "=========" << std::endl;
+    }
 
 }
 
@@ -184,9 +189,11 @@ void Eint::compute_h1e_nuc() {
         }
     }
     Mol_pointer->HNuc = Result.replicate(1,1);
-    std::cout << "=== V ===" << std::endl;
-    std::cout << Mol_pointer->HNuc <<endl;
-    std::cout << "=========" << std::endl;
+    if (prtlevel>1) {
+        std::cout << "=== V ===" << std::endl;
+        std::cout << Mol_pointer->HNuc <<endl;
+        std::cout << "=========" << std::endl;
+    }
 
 }
 
@@ -258,18 +265,20 @@ void Eint::compute_eri() {
         }
     }
 
-    std::cout << "=== ERI ===" << std::endl;
-    for(auto i=0; i<NBF; i++) {
-    for(auto j=0; j<NBF; j++) {
-    for(auto k=0; k<NBF; k++) {
-    for(auto l=0; l<NBF; l++) {
-	if (Mol_pointer->ERI(i,j,k,l)>1e-7)
-		std::cout << i << " " << j << " " << k << " " << l << " " << Mol_pointer->ERI(i,j,k,l) <<endl;
-	}
-	}
-	}
+    if (prtlevel>1) {
+        std::cout << "=== ERI ===" << std::endl;
+        for(auto i=0; i<NBF; i++) {
+        for(auto j=0; j<NBF; j++) {
+        for(auto k=0; k<NBF; k++) {
+        for(auto l=0; l<NBF; l++) {
+	    if (Mol_pointer->ERI(i,j,k,l)>1e-7)
+		    std::cout << i << " " << j << " " << k << " " << l << " " << Mol_pointer->ERI(i,j,k,l) <<endl;
+	    }
+	    }
+	    }
+        }
+        std::cout << "=========" << std::endl;
     }
-    std::cout << "=========" << std::endl;
 
 }
 

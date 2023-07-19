@@ -14,8 +14,7 @@ void Molecule::read_geom(const std::string& filename) {
     string x;
     double r[3];
 
-    std::cout << "Input file detected: " << filename << std::endl;
-    std::cout << "======= Reading Input File =======" << std::endl;
+    std::cout << "======= Reading Molecule =======" << std::endl;
     std::ifstream infile(filename);
 
     reading = 0;
@@ -26,7 +25,7 @@ void Molecule::read_geom(const std::string& filename) {
             // Controls
             //ss >> x;
             ss >> x >> r[0] >> r[1] >> r[2];
-            if (x=="[End]")
+            if (x=="[MolEnd]")
                 reading = -1;
             if (reading == 1) {
                 //std::cout << x << " " << r[0] << " " << r[1] << " " << r[2] << std::endl;

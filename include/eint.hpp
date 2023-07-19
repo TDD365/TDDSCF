@@ -26,15 +26,15 @@ class Eint {
         string infile = "Infile.h5";
 
         // Constructor
-        Eint(Molecule* QMole){
+        Eint(Molecule* Buffer){
             // Assign Pointer
-            Mol_pointer = QMole;
+            Mol_pointer = Buffer;
             // Build Atom Object
-            for (auto i=0; i<QMole->Structure.size(); i++) {
-                atom_temp.atomic_number = QMole->Structure[i].id;
-                atom_temp.x = QMole->Structure[i].x;
-                atom_temp.y = QMole->Structure[i].y;
-                atom_temp.z = QMole->Structure[i].z;
+            for (auto i=0; i<Mol_pointer->Structure.size(); i++) {
+                atom_temp.atomic_number = Mol_pointer->Structure[i].id;
+                atom_temp.x = Mol_pointer->Structure[i].x;
+                atom_temp.y = Mol_pointer->Structure[i].y;
+                atom_temp.z = Mol_pointer->Structure[i].z;
                 int_atoms.push_back(atom_temp);
             }
         }

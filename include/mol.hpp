@@ -50,15 +50,7 @@ class Molecule{
         MatrixRowMajor HVel;          // Core Hamiltonian - Velocity Part
         MatrixRowMajor HNuc;          // Core Hamiltonian - Nuclear Part
         MatrixRowMajor HCore;         // Core Hamiltonian
-
         TensorRowMajor ERI;           // ERI
-        
-        MatrixRowMajor SHalf;         // S^{-1/2}
-        MatrixRowMajor coeff;         // MO Coefficient
-        MatrixRowMajor Den;           // Density Matrix
-        MatrixRowMajor Fock;          // Fock Matrix
-        MatrixRowMajor oDen;          // Orthogonal Density Matrix
-        MatrixRowMajor oFock;         // Orthogonal Fock Matrix
 
         // Object Variables
         std::vector<Atoms> Structure;
