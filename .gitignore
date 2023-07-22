@@ -1,4 +1,6 @@
 .libint.a
 bin
+*build*
 ./bin/*
 OUT
+*swp*

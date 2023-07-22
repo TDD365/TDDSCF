@@ -30,6 +30,7 @@ void Molecule::read_geom(const std::string& filename) {
             if (reading == 1) {
                 //std::cout << x << " " << r[0] << " " << r[1] << " " << r[2] << std::endl;
                 Structure.push_back(Atoms(x, r));
+                Nele+=Atoms(x, r).id;
                 natoms+=1;
                 }
             if (x=="[Mol]")

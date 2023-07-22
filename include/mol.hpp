@@ -43,9 +43,13 @@ class Molecule{
         // Property - Classical
         int natoms;   // Number of Atoms
         double enuc;  // Nuclear Repulsion Energy
+        double ekin;  // Nuclear Kinetic Energy
+        double eele;  // Electronic Energy
+        double etol;  // Total Energy
 
         // Property - Quamtum Chemistry
         int NBF = 0;                  // Total size of Basis
+        int Nele = 0;                 // Number of electrons
         MatrixRowMajor Ovlp;          // Overlap
         MatrixRowMajor HVel;          // Core Hamiltonian - Velocity Part
         MatrixRowMajor HNuc;          // Core Hamiltonian - Nuclear Part

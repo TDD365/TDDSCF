@@ -1,6 +1,5 @@
-#include "mol.hpp"
-#include "eint.hpp"
 #include "controls.hpp"
+#include "hartreefock.hpp"
 using namespace std;
   
 int main()
@@ -23,6 +22,10 @@ int main()
 
     // Compute
     Integrals->compute();
+
+    // HF
+    HartreeFock* SCF = new HartreeFock(Integrals);
+    SCF->do_SCF();
 
     return 0;
 }

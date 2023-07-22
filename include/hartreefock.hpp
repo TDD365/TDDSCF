@@ -7,6 +7,7 @@
 #include "maths.hpp"
 
 // Single Slater Object
+// Should set it as template afterwards, for RHF, UHF, X2C, ...
 class HartreeFock {
     private:
     public:
@@ -16,12 +17,13 @@ class HartreeFock {
 
         // Properties
         int NBF;
-        MatrixRowMajor SHalf;         // S^{-1/2}
-        MatrixRowMajor coeff;         // MO Coefficient
-        MatrixRowMajor Den;           // Density Matrix
-        MatrixRowMajor Fock;          // Fock Matrix
-        MatrixRowMajor oDen;          // Orthogonal Density Matrix
-        MatrixRowMajor oFock;         // Orthogonal Fock Matrix
+        MatrixRowMajor  SHalf;        // S^{-1/2}
+        MatrixRowMajor  Coeff;        // MO Coefficient
+        MatrixRowMajor  Den;          // Density Matrix
+        MatrixRowMajor  Fock;         // Fock Matrix
+        MatrixRowMajor  oDen;         // Orthogonal Density Matrix
+        MatrixRowMajor  oFock;        // Orthogonal Fock Matrix
+        Eigen::VectorXd EOrbs;        // Eigevalues
 
         // Controls
         double conv = 1e-6;           // Convergence
@@ -46,15 +48,17 @@ class HartreeFock {
         // Functions
         // Before SCF
         void get_HCore();
-        void get_Guess();
+        void get_Guess_Den();
+        void get_SHalf();
 
         // During SCF
+        void get_Den();
         void get_Fock();
-        void get_SHalf();
-        void get_oFock();
-        void get_oDen();
+        void solve_FCeSC();
+        void get_Energy();
 
         // SCF
+        void SCFStep();
         void do_SCF();
 
         // After SCF

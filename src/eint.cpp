@@ -91,7 +91,7 @@ void Eint::compute_ovlp() {
             }
         }
     }
-    Mol_pointer->Ovlp = Result.replicate(1,1);
+    Mol_pointer->Ovlp = Result;
     if (prtlevel>1) {
         std::cout << "=== S ===" << std::endl;
         std::cout << Mol_pointer->Ovlp <<endl;
@@ -135,7 +135,7 @@ void Eint::compute_h1e_kin() {
             }
         }
     }
-    Mol_pointer->HVel = Result.replicate(1,1);
+    Mol_pointer->HVel = Result;
     if (prtlevel>1) {
         std::cout << "=== T ===" << std::endl;
         std::cout << Mol_pointer->HVel <<endl;
@@ -188,7 +188,7 @@ void Eint::compute_h1e_nuc() {
             }
         }
     }
-    Mol_pointer->HNuc = Result.replicate(1,1);
+    Mol_pointer->HNuc = Result;
     if (prtlevel>1) {
         std::cout << "=== V ===" << std::endl;
         std::cout << Mol_pointer->HNuc <<endl;
