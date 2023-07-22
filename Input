@@ -13,7 +13,7 @@ Basis inLib sto-3g
 [End]
 
 [SCF]
-Guess Core
+Guess Dumb
 Maxiter 128
 Scfcon 14
 Dencon 12

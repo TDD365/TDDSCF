@@ -36,8 +36,9 @@ void HartreeFock::get_Den() {
         std::cout << "=== Current Density ===" << std::endl;
         std::cout << this->Den << std::endl;
         std::cout << "=========" << std::endl;
-    }    
+    } 
 }
+// TODO: Add SAD & ReadMO
 void HartreeFock::get_Guess_Den() {
     this->Coeff = MatrixRowMajor::Zero(NBF,NBF);
     this->Den = MatrixRowMajor::Zero(NBF,NBF);
@@ -46,12 +47,18 @@ void HartreeFock::get_Guess_Den() {
     if (Mol_pointer->Nele % 2)
         std:cerr << "Non-Singlet NYI!";
     if (Guess_Method=="Dumb") {
+        this->Fock = Mol_pointer->HCore;
         for(auto i=0; i<Mol_pointer->Nele/2; i++)
-            this->Coeff(i,i) = 1.0;
+            this->Coeff(i,i) += 1.0;
     } else if (Guess_Method=="Core") {
         this->Fock = Mol_pointer->HCore;
         this->solve_FCeSC();
     }
+    if (prtlevel>0) {
+        std::cout << "=== Guess MO ===" << std::endl;
+        std::cout << this->Coeff << std::endl;
+        std::cout << "=========" << std::endl;
+    } 
     this->get_Den();
     this->get_Energy();
 }
