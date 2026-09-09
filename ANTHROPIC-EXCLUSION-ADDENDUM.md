@@ -69,20 +69,4 @@ any recipient of this software under GPLv3. This addendum governs **contribution
 acceptance policy only** and is a project-governance document, not a license term
 binding on redistribution or use of the software itself.
 
-## 6. No warranty of legal effect
 
-This document is a drafted policy template, not legal advice. Enforceability of
-any exclusion/warranty clause may vary by jurisdiction. Maintainers intending to
-rely on this for legal purposes (e.g., DMCA-style takedown of a merged
-contribution, contributor disputes) should have it reviewed by qualified counsel
-before adoption.
-
----
-
-*Suggested one-line notice for the top of `LICENSE`:*
-
-> This project is licensed under GPLv3 (see full text below). Contribution
-> acceptance into this repository is additionally governed by
-> `ANTHROPIC-EXCLUSION-ADDENDUM.md`, which excludes any Anthropic-model-derived
-> content from official contributions. See that file for details. This project
-> is not represented as OSI-compliant "open source" due to this restriction.
