@@ -1,16 +1,7 @@
 # Supplementary Contribution Restriction (Anthropic Exclusion Addendum)
 
 **Status note:** This document is a supplementary project policy, not a modification
-of the GNU General Public License v3.0 ("GPLv3") text itself. It is intended to be
-distributed alongside the GPLv3 `LICENSE` file and referenced from `CONTRIBUTING.md`
-and pull-request templates. The maintainers acknowledge that this restriction is
-**not** a permitted "further restriction" under GPLv3 §7, and therefore a project
-governed by both documents together **should not be represented, labeled, or
-advertised as "open source"** or "OSI-approved" in any distribution, README, or
-package registry metadata. Redistribution of the underlying code under plain GPLv3
-terms alone remains a right retained by any recipient, as GPLv3 requires; this
-addendum binds only *contribution acceptance into this repository's official
-branches*, not downstream forks.
+of the GNU General Public License v3.0 ("GPLv3") text itself.
 
 ## 1. Purpose
 
@@ -57,16 +48,5 @@ a. Maintainers may reject, revert, or remove any contribution at any time upon a
 b. A pattern of violations may result in the contributor being blocked from
    further participation in the project, at maintainer discretion.
 
-c. This policy is enforced at the project/repository level only. It does not
-   purport to restrict what any downstream recipient of GPLv3-licensed code may do
-   with their own copy, including their own use of Anthropic models on that code,
-   as GPLv3 itself does not permit restricting downstream freedoms of that kind.
-
-## 5. Relationship to the GPLv3 license
-
-Nothing in this addendum modifies, limits, or supersedes the rights granted to
-any recipient of this software under GPLv3. This addendum governs **contribution
-acceptance policy only** and is a project-governance document, not a license term
-binding on redistribution or use of the software itself.
 
 
