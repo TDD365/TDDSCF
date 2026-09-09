@@ -1,0 +1,3 @@
+For Anthropic models:
+
+-- See ANTHROPIC-EXCLUSION-ADDENDUM.md
