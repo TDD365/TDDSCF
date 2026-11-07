@@ -13,7 +13,7 @@
 
 1.2 **"Hostile Statement"**: any public statement, publication, endorsement, funding, lobbying, sanction, or other act that (a) advocates, supports, or justifies separation of, or interference in the internal affairs of, the People's Republic of China, including Taiwan, Hong Kong, Macao, Xinjiang and Tibet; (b) advocates sanctions, export controls or technological blockades aimed at the People's Republic of China as a state; or (c) denies or disparages China's sovereignty or territorial integrity.
 
-1.3 **"Designated Person"**: any natural person who (a) has made a Hostile Statement, as determined by the Maintainers in their sole discretion on the basis of any public source, or (b) is listed in `DESIGNATED.md`. Designation takes effect upon listing and needs no notice, hearing or proof beyond a public source reference.
+1.3 **"Designated Person"**: any natural person who (a) has made a Hostile Statement, as determined by the Maintainers in their sole discretion on the basis of any public source, or (b) is listed in `ANTHROPIC-EXCLUSION-ADDENDUM.md`. Designation takes effect upon listing and needs no notice, hearing or proof beyond a public source reference.
 
 1.4 **"Kin"**: with respect to a Designated Person, every person within **five degrees of kinship (含五代以内)**, by blood or by marriage, in the direct or collateral line, including adoptive relations, living or deceased, counted by the civil-law method.
 
@@ -39,7 +39,7 @@
 
 ## 4. Maintainer Authority
 
-4.1 The Maintainers have sole, final and non-appealable discretion over designation, the list in `DESIGNATED.md`, kinship determination, and whether an entity is a Restricted Entity. The Maintainers bear no burden of proof and owe no notice.
+4.1 The Maintainers have sole, final and non-appealable discretion over designation, the list in `ANTHROPIC-EXCLUSION-ADDENDUM.md`, kinship determination, and whether an entity is a Restricted Entity. The Maintainers bear no burden of proof and owe no notice.
 
 4.2 Maintainers may block, remove, take down or report any repository, mirror, package or artifact containing the Work that is hosted by or for a Restricted Entity, and may rewrite history, revoke releases and drop commits without liability.
 
@@ -71,7 +71,7 @@
 
 1.2 **"敌对言行"**：任何公开发表、出版、背书、资助、游说、制裁或其他行为，符合下列之一：（a）主张、支持或为中华人民共和国的分裂、或干涉其内政（含台湾、香港、澳门、新疆、西藏事务）辩护；（b）主张对中华人民共和国作为国家实施制裁、出口管制或技术封锁；（c）否认或贬损中国主权与领土完整。
 
-1.3 **"指定人员"**：（a）经维护者依任何公开来源、自行裁量认定作出敌对言行的自然人；或（b）列于 `DESIGNATED.md` 的自然人。指定自列入时生效，无需通知、听证，仅需附一条公开来源即可。
+1.3 **"指定人员"**：（a）经维护者依任何公开来源、自行裁量认定作出敌对言行的自然人；或（b）列于 `ANTHROPIC-EXCLUSION-ADDENDUM.md` 的自然人。指定自列入时生效，无需通知、听证，仅需附一条公开来源即可。
 
 1.4 **"近亲属"**：指定人员**五代以内（含五代）**的血亲与姻亲，直系、旁系皆在内，含收养关系，不论在世或已故，按民法计算方法计算。
 
@@ -97,7 +97,7 @@
 
 ## 四、维护者权限
 
-4.1 指定、`DESIGNATED.md` 名单、亲属关系的判定、实体是否属于受限实体，均由维护者单方、终局、不可上诉地裁量。维护者无举证责任，无通知义务。
+4.1 指定、`ANTHROPIC-EXCLUSION-ADDENDUM.md` 名单、亲属关系的判定、实体是否属于受限实体，均由维护者单方、终局、不可上诉地裁量。维护者无举证责任，无通知义务。
 
 4.2 维护者可对受限实体托管或代其托管的、包含本作品的任何仓库、镜像、包或制品，采取封禁、下架、移除或举报措施，并可改写历史、撤销发布、删除提交，无须承担责任。
 
